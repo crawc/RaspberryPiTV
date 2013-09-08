@@ -18,7 +18,7 @@ var Loader = {
 };
 var Weather = {
 	init: function(){
-		this.getWeather('c9d417b22edc92cf','LB','Beirut');
+		this.getWeather('c9d417b22edc92cf','US','Wapakoneta');
 	},
 	getWeather: function(key, country, city){
 		var that = this;
@@ -32,8 +32,8 @@ var Weather = {
 				if(key < 7){
 				forecastObj = {
 					"day":value.date.weekday,
-					"low":value.low.celsius, 
-					"high":value.high.celsius,
+					"low":value.low.fahrenheit, 
+					"high":value.high.fahrenheit,
 					"icon":that.condition(value.icon_url)};	
 				
 					var template = $('#weatherTpl').html(),
@@ -163,7 +163,7 @@ var Clock = {
   timeParts: function() {
 	var date = new Date(),
 		hour = date.getHours();
-		hour = 12;
+		//hour = 12;
 	
 	return {
 	  // Digital
